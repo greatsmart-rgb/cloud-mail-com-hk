@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>佳誠電腦系統公司 | Great Smart Computer System Company</title>
+    <meta name="description" content="佳誠電腦系統公司 - 全面IT解決方案，電腦設備、網絡工程、系統集成，成立於1998年。Great Smart Computer System Company - Comprehensive IT Solutions since 1998.">
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --primary-dark: #064d94;
+            --secondary: #00a8e8;
+            --accent: #ff6b35;
+            --dark: #1a1a2e;
+            --darker: #12121f;
+            --light: #f5f7fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --gold: #d4a843;
+            --gradient-1: linear-gradient(135deg, #0a66c2 0%, #00a8e8 50%, #00d4ff 100%);
+            --gradient-2: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --gradient-3: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang HK', 'Microsoft JhengHei', 'Noto Sans TC', 'Hiragino Sans', 'Meiryo', sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === ANIMATIONS === */
+        /* 1. Fade In Up */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* 2. Fade In Scale */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* 3. Pulse Glow */
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(10, 102, 194, 0.4), 0 0 60px rgba(10, 102, 194, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(10, 102, 194, 0.8), 0 0 100px rgba(10, 102, 194, 0.3);
+            }
+        }
+        /* 4. Float */
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+        /* 5. Rotate Slow */
+        @keyframes rotateSlow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* 6. Shimmer */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        /* 7. Bounce */
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-8px);
+            }
+        }
+        /* 8. Slide In Left */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        /* 9. Slide In Right */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        /* 10. Border Glow */
+        @keyframes borderGlow {
+            0%,
+            100% {
+                border-color: rgba(10, 102, 194, 0.4);
+            }
+            50% {
+                border-color: rgba(0, 168, 232, 1);
+            }
+        }
+        /* 11. Typewriter Cursor */
+        @keyframes blinkCursor {
+            0%,
+            100% {
+                border-right-color: #0a66c2;
+            }
+            50% {
+                border-right-color: transparent;
+            }
+        }
+        /* 12. Gradient Shift */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* 13. Ring Pulse */
+        @keyframes ringPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(10, 102, 194, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 0 25px rgba(10, 102, 194, 0);
+            }
+        }
+        /* 14. Flip In */
+        @keyframes flipIn {
+            from {
+                transform: perspective(600px) rotateY(-20deg);
+                opacity: 0;
+            }
+            to {
+                transform: perspective(600px) rotateY(0);
+                opacity: 1;
+            }
+        }
+        /* 15. Particle Fade */
+        @keyframes particleFade {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-120px) scale(0.3);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .animate-fadeInScale {
+            animation: fadeInScale 0.6s ease forwards;
+        }
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease forwards;
+        }
+        .animate-flipIn {
+            animation: flipIn 0.7s ease forwards;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        .animate-rotateSlow {
+            animation: rotateSlow 20s linear infinite;
+        }
+        .animate-pulseGlow {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+        .animate-borderGlow {
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        .animate-gradientShift {
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        /* === TOP BAR === */
+        .top-bar {
+            background: var(--darker);
+            color: #ccc;
+            font-size: 0.8rem;
+            padding: 8px 0;
+            letter-spacing: 0.3px;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            margin: 0 6px;
+        }
+        .top-bar a:hover {
+            color: var(--secondary);
+        }
+        .top-bar .contact-mini span {
+            margin: 0 8px;
+            white-space: nowrap;
+        }
+        .top-bar .contact-mini i {
+            margin-right: 3px;
+            color: var(--secondary);
+        }
+
+        /* === HEADER / NAV === */
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        .header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-svg {
+            width: 55px;
+            height: 55px;
+            transition: var(--transition);
+        }
+        .logo-svg:hover {
+            transform: scale(1.08);
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-text .brand-zh {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .logo-text .brand-en {
+            font-size: 0.65rem;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.4px;
+        }
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            background: var(--primary);
+            color: #fff;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 3px;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+        .lang-switch button {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        .lang-switch button.active-lang {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .lang-switch button:hover {
+            background: #e8f4fd;
+            border-color: var(--primary);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #333;
+            padding: 8px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            background: var(--gradient-2);
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+        .hero-bg-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleFade 4s infinite;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 400px;
+            animation: fadeInUp 1s ease forwards;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .hero h1 .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            max-width: 550px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.4px;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--gradient-1);
+            color: #fff;
+            box-shadow: 0 6px 25px rgba(10, 102, 194, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(10, 102, 194, 0.55);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--dark);
+        }
+        .btn-accent {
+            background: var(--gradient-3);
+            color: #fff;
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.55);
+        }
+        .hero-image {
+            flex: 1 1 350px;
+            text-align: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        /* === SECTION STYLES === */
+        section {
+            padding: 70px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .section-header .subtitle {
+            color: var(--gray);
+            font-size: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header .subtitle::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-1);
+            margin: 10px auto 0;
+            border-radius: 3px;
+        }
+
+        /* === ABOUT SECTION === */
+        .about-section {
+            background: #fff;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .about-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInScale 0.8s ease forwards;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .about-image:hover img {
+            transform: scale(1.04);
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        .stat-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .stat-card .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .stat-card .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* === SERVICES === */
+        .services-section {
+            background: var(--light);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 28px 22px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 2rem;
+            color: #fff;
+            transition: var(--transition);
+        }
+        .service-card:hover .service-icon {
+            animation: ringPulse 1.5s infinite;
+            transform: scale(1.1);
+        }
+        .service-card h3 {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* === PRODUCTS === */
+        .products-section {
+            background: #fff;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .product-card:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+        .product-card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .product-card:hover img {
+            transform: scale(1.06);
+        }
+        .product-card .product-info {
+            padding: 16px;
+        }
+        .product-card .product-info h4 {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+        .product-card .product-info .price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* === PAYMENT SECTION === */
+        .payment-section {
+            background: var(--gradient-2);
+            color: #fff;
+            text-align: center;
+        }
+        .payment-section .section-header h2 {
+            color: #fff;
+        }
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .payment-icon-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 28px;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .payment-icon-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .payment-icon-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        /* === CONTACT === */
+        .contact-section {
+            background: #fff;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .contact-card {
+            background: var(--light);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            text-align: center;
+            border: 2px solid transparent;
+        }
+        .contact-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+        .contact-card .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-card h4 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .contact-card a,
+        .contact-card span {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--darker);
+            color: #bbb;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer h4 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .footer a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--secondary);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* === AI AGENT CHAT === */
+        .ai-agent-trigger {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            z-index: 9999;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+        .ai-agent-trigger:hover {
+            transform: scale(1.1);
+        }
+        .ai-agent-panel {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 380px;
+            max-width: 90vw;
+            height: 520px;
+            max-height: 70vh;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            animation: fadeInScale 0.3s ease forwards;
+        }
+        .ai-agent-panel.open {
+            display: flex;
+        }
+        .ai-agent-header {
+            background: var(--gradient-1);
+            color: #fff;
+            padding: 16px 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ai-agent-header .ai-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        .ai-agent-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+        .ai-agent-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f9fafb;
+        }
+        .ai-msg {
+            max-width: 82%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        .ai-msg.bot {
+            background: #e8f4fd;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            color: #333;
+        }
+        .ai-msg.user {
+            background: var(--primary);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .ai-agent-input-area {
+            display: flex;
+            padding: 10px 14px;
+            gap: 8px;
+            border-top: 1px solid #eee;
+            background: #fff;
+        }
+        .ai-agent-input-area input {
+            flex: 1;
+            padding: 10px 16px;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .ai-agent-input-area input:focus {
+            border-color: var(--primary);
+        }
+        .ai-agent-input-area button {
+            padding: 10px 16px;
+            border-radius: 25px;
+            background: var(--gradient-1);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .ai-agent-input-area button:hover {
+            opacity: 0.9;
+        }
+
+        /* === CONTAINER === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: var(--shadow-lg);
+                padding: 16px;
+                gap: 4px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                min-height: 420px;
+            }
+            .lang-switch {
+                gap: 2px;
+            }
+            .lang-switch button {
+                padding: 5px 7px;
+                font-size: 0.7rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            .top-bar .container {
+                flex-direction: column;
+                text-align: center;
+                font-size: 0.7rem;
+            }
+            .ai-agent-panel {
+                width: 95vw;
+                right: 2.5vw;
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-mini">
+                <span>📞 <span data-lang-key="sales_hotline">銷售熱線</span>: (852) 8100 2638</span>
+                <span>📱 WhatsApp/WeChat: (852) 9290 7998</span>
+            </div>
+            <div>
+                <span data-lang-key="since">自1998年服務至今</span> | <span data-lang-key="trusted">值得信賴的IT夥伴</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo-wrapper" title="佳誠電腦系統公司">
+                <!-- Logo SVG -->
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0a66c2"/>
+                            <stop offset="50%" stop-color="#00a8e8"/>
+                            <stop offset="100%" stop-color="#00d4ff"/>
+                        </linearGradient>
+                        <filter id="logoShadow">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+                        </filter>
+                    </defs>
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#logoGrad)" stroke-width="5" filter="url(#logoShadow)"/>
+                    <text x="50" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="url(#logoGrad)">GS</text>
+                    <text x="50" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="12" fill="#0a66c2">SMART</text>
+                    <circle cx="76" cy="28" r="8" fill="#ff6b35" opacity="0.9"/>
+                    <line x1="20" y1="72" x2="80" y2="72" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-zh">佳誠電腦</span>
+                    <span class="brand-en">Great Smart Computer System Co.</span>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" data-lang-key="nav_home" class="active">首頁</a></li>
+                    <li><a href="#about" data-lang-key="nav_about">關於我們</a></li>
+                    <li><a href="#services" data-lang-key="nav_services">服務範疇</a></li>
+                    <li><a href="#products" data-lang-key="nav_products">產品展示</a></li>
+                    <li><a href="#payment" data-lang-key="nav_payment">付款方式</a></li>
+                    <li><a href="#contact" data-lang-key="nav_contact">聯絡我們</a></li>
+                </ul>
+            </nav>
+
+            <div class="lang-switch">
+                <button onclick="switchLang('zh-HK')" class="active-lang" id="btn-zhHK">繁</button>
+                <button onclick="switchLang('zh-CN')" id="btn-zhCN">简</button>
+                <button onclick="switchLang('en')" id="btn-en">EN</button>
+                <button onclick="switchLang('ja')" id="btn-ja">日</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg-particles" id="heroParticles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge" data-lang-key="hero_badge">🏆 25+年IT專業經驗</span>
+                <h1><span data-lang-key="hero_title1">全方位</span> <span class="highlight" data-lang-key="hero_title2">IT解決方案</span><br><span data-lang-key="hero_title3">專業電腦設備供應商</span></h1>
+                <p data-lang-key="hero_desc">佳誠電腦系統公司自1998年成立，提供全面的電腦設備、網絡工程、系統集成及IT支援服務。我們是您值得信賴的一站式IT夥伴。</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary" data-lang-key="hero_btn1">📞 聯絡我們</a>
+                    <a href="#products" class="btn btn-outline" data-lang-key="hero_btn2">🖥️ 瀏覽產品</a>
+                    <a href="#services" class="btn btn-accent" data-lang-key="hero_btn3">🔧 我們的服務</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1581092921461-39b9d317a72b?w=600&h=400&fit=crop&crop=center"
+                alt="IT Server Room" loading="eager"
+                onerror="this.src='https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?w=600'">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 data-lang-key="about_title">關於佳誠電腦</h2>
+                <p class="subtitle" data-lang-key="about_subtitle">25+年專業IT服務經驗，您的可靠科技夥伴</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
+                    alt="Modern Office IT Setup" loading="lazy"
+                    onerror="this.src='https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?w=600'">
+                </div>
+                <div>
+                    <p data-lang-key="about_text1" style="margin-bottom:14px;">佳誠電腦系統公司 (Great Smart Computer System Company) 成立於1998年，扎根香港九龍灣，致力為中小企業及個人客戶提供優質的電腦設備、網絡基建及全方位IT解決方案。</p>
+                    <p data-lang-key="about_text2" style="margin-bottom:14px;">我們代理多個國際知名品牌，包括伺服器、桌上電腦、筆記本、打印機、網絡路由器、防火牆、監控系統及各類電腦配件，貨源充足，價格合理。</p>
+                    <div class="about-stats">
+                        <div class="stat-card animate-fadeInScale">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label" data-lang-key="stat_years">年行業經驗</div>
+                        </div>
+                        <div class="stat-card animate-fadeInScale">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label" data-lang-key="stat_clients">滿意客戶</div>
+                        </div>
+                        <div class="stat-card animate-fadeInScale">
+                            <div class="stat-number">10000+</div>
+                            <div class="stat-label" data-lang-key="stat_products">產品種類</div>
+                        </div>
+                        <div class="stat-card animate-fadeInScale">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label" data-lang-key="stat_support">技術支援</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 data-lang-key="services_title">我們的服務範疇</h2>
+                <p class="subtitle" data-lang-key="services_subtitle">一站式IT服務，全方位照顧您的業務需求</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-slideInLeft">
+                    <div class="service-icon">🖥️</div>
+                    <h3 data-lang-key="svc1_title">電腦設備供應</h3>
+                    <p data-lang-key="svc1_desc">桌上電腦、筆記本、伺服器、工作站，各大品牌正品行貨。</p>
+                </div>
+                <div class="service-card animate-fadeInUp">
+                    <div class="service-icon">🌐</div>
+                    <h3 data-lang-key="svc2_title">網絡工程建設</h3>
+                    <p data-lang-key="svc2_desc">企業級路由器、交換機、防火牆、Wi-Fi覆蓋方案及佈線工程。</p>
+                </div>
+                <div class="service-card animate-slideInRight">
+                    <div class="service-icon">🔒</div>
+                    <h3 data-lang-key="svc3_title">網絡安全方案</h3>
+                    <p data-lang-key="svc3_desc">防火牆配置、VPN設置、入侵檢測、數據加密及安全審計。</p>
+                </div>
+                <div class="service-card animate-slideInLeft">
+                    <div class="service-icon">☁️</div>
+                    <h3 data-lang-key="svc4_title">雲端服務</h3>
+                    <p data-lang-key="svc4_desc">雲伺服器租用、數據備份、企業郵箱及雲端協作平台。</p>
+                </div>
+                <div class="service-card animate-fadeInUp">
+                    <div class="service-icon">📹</div>
+                    <h3 data-lang-key="svc5_title">監控系統</h3>
+                    <p data-lang-key="svc5_desc">高清CCTV、IP攝像頭、遠程監控及錄像儲存方案。</p>
+                </div>
+                <div class="service-card animate-slideInRight">
+                    <div class="service-icon">🔧</div>
+                    <h3 data-lang-key="svc6_title">IT支援維護</h3>
+                    <p data-lang-key="svc6_desc">定期維護、緊急維修、系統升級及技術顧問服務。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 data-lang-key="products_title">熱門產品推介</h2>
+                <p class="subtitle" data-lang-key="products_subtitle">精選優質電腦設備及配件，滿足您的各種需求</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be populated by JS for multi-lang support -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PAYMENT SECTION ==================== -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 data-lang-key="payment_title">靈活付款方式</h2>
+                <p class="subtitle" data-lang-key="payment_subtitle" style="color:#ddd;">支援多種電子支付，方便快捷</p>
+            </div>
+            <div class="payment-icons">
+                <div class="payment-icon-item animate-fadeInScale">
+                    <span style="font-size:2rem;">💳</span>
+                    <span>VISA / MasterCard</span>
+                </div>
+                <div class="payment-icon-item animate-fadeInScale">
+                    <span style="font-size:2rem;">📱</span>
+                    <span>Alipay 支付宝</span>
+                </div>
+                <div class="payment-icon-item animate-fadeInScale">
+                    <span style="font-size:2rem;">💚</span>
+                    <span>WeChat Pay 微信支付</span>
+                </div>
+                <div class="payment-icon-item animate-fadeInScale">
+                    <span style="font-size:2rem;">🐙</span>
+                    <span>八達通 Octopus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header animate-fadeInUp">
+                <h2 data-lang-key="contact_title">聯絡我們</h2>
+                <p class="subtitle" data-lang-key="contact_subtitle">歡迎查詢，我們隨時為您服務</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">📍</div>
+                    <h4 data-lang-key="contact_addr_label">公司地址</h4>
+                    <span>ROOM 431, 4/F, KOWLOON BAY IND'L CENTRE,<br>15 WANG HOI ROAD, KOWLOON BAY, KOWLOON</span>
+                </div>
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">📞</div>
+                    <h4 data-lang-key="contact_tel_label">電話 / 銷售熱線</h4>
+                    <span>Tel: (852) 2866 8716</span><br>
+                    <span data-lang-key="contact_sales">銷售</span>: (852) 8100 2638
+                </div>
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">📠</div>
+                    <h4 data-lang-key="contact_fax_label">傳真</h4>
+                    <span>Fax: (852) 2354 9388</span>
+                </div>
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">💬</div>
+                    <h4>WhatsApp / WeChat</h4>
+                    <span>(852) 9290 7998</span>
+                </div>
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">🌐</div>
+                    <h4 data-lang-key="contact_web_label">網站</h4>
+                    <a href="https://www.greatsmart.com.hk" target="_blank" rel="noopener">www.greatsmart.com.hk</a>
+                </div>
+                <div class="contact-card animate-fadeInUp">
+                    <div class="contact-icon">📧</div>
+                    <h4 data-lang-key="contact_email_label">電郵</h4>
+                    <a href="mailto:info@greatsmart.com.hk">info@greatsmart.com.hk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>佳誠電腦系統公司</h4>
+                    <p>Great Smart Computer System Company</p>
+                    <p data-lang-key="footer_established">成立於1998年</p>
+                </div>
+                <div>
+                    <h4 data-lang-key="footer_quick_links">快速連結</h4>
+                    <p><a href="#home" data-lang-key="nav_home">首頁</a></p>
+                    <p><a href="#about" data-lang-key="nav_about">關於我們</a></p>
+                    <p><a href="#services" data-lang-key="nav_services">服務範疇</a></p>
+                    <p><a href="#products" data-lang-key="nav_products">產品展示</a></p>
+                </div>
+                <div>
+                    <h4 data-lang-key="footer_payment">付款方式</h4>
+                    <p>✅ VISA / MasterCard</p>
+                    <p>✅ Alipay 支付宝</p>
+                    <p>✅ WeChat Pay 微信支付</p>
+                    <p>✅ 八達通 Octopus</p>
+                </div>
+                <div>
+                    <h4 data-lang-key="footer_cert">認證與保障</h4>
+                    <p>🔒 SSL 加密連接</p>
+                    <p>🛡️ 正品行貨保證</p>
+                    <p>📋 專業技術支援</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1998 - <span id="currentYear">2026</span> 佳誠電腦系統公司 Great Smart Computer System Company. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== AI AGENT CHAT ==================== -->
+    <button class="ai-agent-trigger" id="aiAgentTrigger" title="AI 智能助手">🤖</button>
+    <div class="ai-agent-panel" id="aiAgentPanel">
+        <div class="ai-agent-header">
+            <div class="ai-avatar">🤖</div>
+            <span>AI 智能助手 | AI Agent</span>
+            <button class="ai-agent-close" id="aiAgentClose">✕</button>
+        </div>
+        <div class="ai-agent-messages" id="aiMessages">
+            <div class="ai-msg bot" data-lang-key="ai_welcome">您好！我是佳誠電腦的AI智能助手👋 可以回答關於產品、服務、報價及技術支援的問題。請問有什麼可以幫您？</div>
+        </div>
+        <div class="ai-agent-input-area">
+            <input type="text" id="aiInput" placeholder="請輸入您的問題..." data-lang-key-placeholder="ai_placeholder">
+            <button id="aiSendBtn">➤</button>
+        </div>
+    </div>
+
+    <script>
+        // ==================== MULTI-LANGUAGE SYSTEM ====================
+        const translations = {
+            'zh-HK': {
+                sales_hotline: '銷售熱線',
+                since: '自1998年服務至今',
+                trusted: '值得信賴的IT夥伴',
+                nav_home: '首頁',
+                nav_about: '關於我們',
+                nav_services: '服務範疇',
+                nav_products: '產品展示',
+                nav_payment: '付款方式',
+                nav_contact: '聯絡我們',
+                hero_badge: '🏆 25+年IT專業經驗',
+                hero_title1: '全方位',
+                hero_title2: 'IT解決方案',
+                hero_title3: '專業電腦設備供應商',
+                hero_desc: '佳誠電腦系統公司自1998年成立，提供全面的電腦設備、網絡工程、系統集成及IT支援服務。我們是您值得信賴的一站式IT夥伴。',
+                hero_btn1: '📞 聯絡我們',
+                hero_btn2: '🖥️ 瀏覽產品',
+                hero_btn3: '🔧 我們的服務',
+                about_title: '關於佳誠電腦',
+                about_subtitle: '25+年專業IT服務經驗，您的可靠科技夥伴',
+                about_text1: '佳誠電腦系統公司 (Great Smart Computer System Company) 成立於1998年，扎根香港九龍灣，致力為中小企業及個人客戶提供優質的電腦設備、網絡基建及全方位IT解決方案。',
+                about_text2: '我們代理多個國際知名品牌，包括伺服器、桌上電腦、筆記本、打印機、網絡路由器、防火牆、監控系統及各類電腦配件，貨源充足，價格合理。',
+                stat_years: '年行業經驗',
+                stat_clients: '滿意客戶',
+                stat_products: '產品種類',
+                stat_support: '技術支援',
+                services_title: '我們的服務範疇',
+                services_subtitle: '一站式IT服務，全方位照顧您的業務需求',
+                svc1_title: '電腦設備供應',
+                svc1_desc: '桌上電腦、筆記本、伺服器、工作站，各大品牌正品行貨。',
+                svc2_title: '網絡工程建設',
+                svc2_desc: '企業級路由器、交換機、防火牆、Wi-Fi覆蓋方案及佈線工程。',
+                svc3_title: '網絡安全方案',
+                svc3_desc: '防火牆配置、VPN設置、入侵檢測、數據加密及安全審計。',
+                svc4_title: '雲端服務',
+                svc4_desc: '雲伺服器租用、數據備份、企業郵箱及雲端協作平台。',
+                svc5_title: '監控系統',
+                svc5_desc: '高清CCTV、IP攝像頭、遠程監控及錄像儲存方案。',
+                svc6_title: 'IT支援維護',
+                svc6_desc: '定期維護、緊急維修、系統升級及技術顧問服務。',
+                products_title: '熱門產品推介',
+                products_subtitle: '精選優質電腦設備及配件，滿足您的各種需求',
+                product_names: ['商務桌面電腦', '高效能筆記本', '企業級伺服器', '24口千兆交換機', '企業防火牆', '無線AP接入點',
+                    '高清CCTV攝像頭', 'UPS不間斷電源', 'SSD固態硬碟', '專業顯示卡', '機械鍵盤', '網絡線材'
+                ],
+                product_prices: ['HK$4,980起', 'HK$6,880起', 'HK$12,800起', 'HK$2,380', 'HK$5,600起', 'HK$1,280',
+                    'HK$880', 'HK$1,980', 'HK$480', 'HK$3,200', 'HK$680', 'HK$180/箱'
+                ],
+                payment_title: '靈活付款方式',
+                payment_subtitle: '支援多種電子支付，方便快捷',
+                contact_title: '聯絡我們',
+                contact_subtitle: '歡迎查詢，我們隨時為您服務',
+                contact_addr_label: '公司地址',
+                contact_tel_label: '電話 / 銷售熱線',
+                contact_sales: '銷售',
+                contact_fax_label: '傳真',
+                contact_web_label: '網站',
+                contact_email_label: '電郵',
+                footer_established: '成立於1998年',
+                footer_quick_links: '快速連結',
+                footer_payment: '付款方式',
+                footer_cert: '認證與保障',
+                ai_welcome: '您好！我是佳誠電腦的AI智能助手👋 可以回答關於產品、服務、報價及技術支援的問題。請問有什麼可以幫您？',
+                ai_placeholder: '請輸入您的問題...',
+                ai_no_answer: '抱歉，我暫時無法回答這個問題。請致電 (852) 2866 8716 與我們的客戶服務團隊聯絡，他們會很樂意為您提供協助！😊',
+                ai_greeting_responses: {
+                    '你好': '您好！歡迎來到佳誠電腦系統公司！我們提供全面的IT產品和服務，包括電腦設備、網絡工程、監控系統等。請問有什麼可以幫您？😊',
+                    'hi': 'Hello! Welcome to Great Smart Computer System Company! How can I assist you today? 😊',
+                    'hello': 'Hello! Welcome to Great Smart! We offer comprehensive IT solutions. How may I help you?',
+                    'こんにちは': 'こんにちは！佳誠電腦系統公司へようこそ！IT製品やサービスについてお気軽にお問い合わせください。😊',
+                }
+            },
+            'zh-CN': {
+                sales_hotline: '销售热线',
+                since: '自1998年服务至今',
+                trusted: '值得信赖的IT伙伴',
+                nav_home: '首页',
+                nav_about: '关于我们',
+                nav_services: '服务范畴',
+                nav_products: '产品展示',
+                nav_payment: '付款方式',
+                nav_contact: '联络我们',
+                hero_badge: '🏆 25+年IT专业经验',
+                hero_title1: '全方位',
+                hero_title2: 'IT解决方案',
+                hero_title3: '专业电脑设备供应商',
+                hero_desc: '佳诚电脑系统公司自1998年成立，提供全面的电脑设备、网络工程、系统集成及IT支持服务。我们是您值得信赖的一站式IT伙伴。',
+                hero_btn1: '📞 联络我们',
+                hero_btn2: '🖥️ 浏览产品',
+                hero_btn3: '🔧 我们的服务',
+                about_title: '关于佳诚电脑',
+                about_subtitle: '25+年专业IT服务经验，您的可靠科技伙伴',
+                about_text1: '佳诚电脑系统公司 (Great Smart Computer System Company) 成立于1998年，扎根香港九龙湾，致力为中小企业及个人客户提供优质的电脑设备、网络基建及全方位IT解决方案。',
+                about_text2: '我们代理多个国际知名品牌，包括服务器、桌上电脑、笔记本、打印机、网络路由器、防火墙、监控系统及各类电脑配件，货源充足，价格合理。',
+                stat_years: '年行业经验',
+                stat_clients: '满意客户',
+                stat_products: '产品种类',
+                stat_support: '技术支持',
+                services_title: '我们的服务范畴',
+                services_subtitle: '一站式IT服务，全方位照顾您的业务需求',
+                svc1_title: '电脑设备供应',
+                svc1_desc: '桌上电脑、笔记本、服务器、工作站，各大品牌正品行货。',
+                svc2_title: '网络工程建设',
+                svc2_desc: '企业级路由器、交换机、防火墙、Wi-Fi覆盖方案及布线工程。',
+                svc3_title: '网络安全方案',
+                svc3_desc: '防火墙配置、VPN设置、入侵检测、数据加密及安全审计。',
+                svc4_title: '云端服务',
+                svc4_desc: '云服务器租用、数据备份、企业邮箱及云端协作平台。',
+                svc5_title: '监控系统',
+                svc5_desc: '高清CCTV、IP摄像头、远程监控及录像储存方案。',
+                svc6_title: 'IT支持维护',
+                svc6_desc: '定期维护、紧急维修、系统升级及技术顾问服务。',
+                products_title: '热门产品推介',
+                products_subtitle: '精选优质电脑设备及配件，满足您的各种需求',
+                product_names: ['商务桌面电脑', '高效能笔记本', '企业级服务器', '24口千兆交换机', '企业防火墙', '无线AP接入点', '高清CCTV摄像头',
+                    'UPS不间断电源', 'SSD固态硬盘', '专业显示卡', '机械键盘', '网络线材'
+                ],
+                product_prices: ['HK$4,980起', 'HK$6,880起', 'HK$12,800起', 'HK$2,380', 'HK$5,600起', 'HK$1,280', 'HK$880',
+                    'HK$1,980', 'HK$480', 'HK$3,200', 'HK$680', 'HK$180/箱'
+                ],
+                payment_title: '灵活付款方式',
+                payment_subtitle: '支持多种电子支付，方便快捷',
+                contact_title: '联络我们',
+                contact_subtitle: '欢迎查询，我们随时为您服务',
+                contact_addr_label: '公司地址',
+                contact_tel_label: '电话 / 销售热线',
+                contact_sales: '销售',
+                contact_fax_label: '传真',
+                contact_web_label: '网站',
+                contact_email_label: '电邮',
+                footer_established: '成立于1998年',
+                footer_quick_links: '快速链接',
+                footer_payment: '付款方式',
+                footer_cert: '认证与保障',
+                ai_welcome: '您好！我是佳诚电脑的AI智能助手👋 可以回答关于产品、服务、报价及技术支持的问题。请问有什么可以帮您？',
+                ai_placeholder: '请输入您的问题...',
+                ai_no_answer: '抱歉，我暂时无法回答这个问题。请致电 (852) 2866 8716 与我们的客户服务团队联络，他们会很乐意为您提供协助！😊',
+                ai_greeting_responses: {
+                    '你好': '您好！欢迎来到佳诚电脑系统公司！我们提供全面的IT产品和服务，包括电脑设备、网络工程、监控系统等。请问有什么可以帮您？😊',
+                    'hi': 'Hello! Welcome to Great Smart Computer System Company! How can I assist you today? 😊',
+                }
+            },
+            'en': {
+                sales_hotline: 'Sales Hotline',
+                since: 'Serving Since 1998',
+                trusted: 'Your Trusted IT Partner',
+                nav_home: 'Home',
+                nav_about: 'About Us',
+                nav_services: 'Services',
+                nav_products: 'Products',
+                nav_payment: 'Payment',
+                nav_contact: 'Contact',
+                hero_badge: '🏆 25+ Years IT Expertise',
+                hero_title1: 'Comprehensive',
+                hero_title2: 'IT Solutions',
+                hero_title3: 'Professional Computer Equipment Supplier',
+                hero_desc: 'Great Smart Computer System Company, established in 1998, provides comprehensive computer equipment, network engineering, system integration and IT support services. We are your trusted one-stop IT partner.',
+                hero_btn1: '📞 Contact Us',
+                hero_btn2: '🖥️ Browse Products',
+                hero_btn3: '🔧 Our Services',
+                about_title: 'About Great Smart',
+                about_subtitle: '25+ Years of Professional IT Service, Your Reliable Technology Partner',
+                about_text1: 'Great Smart Computer System Company was established in 1998, based in Kowloon Bay, Hong Kong. We are dedicated to providing quality computer equipment, network infrastructure and comprehensive IT solutions for SMEs and individual customers.',
+                about_text2: 'We distribute multiple internationally renowned brands including servers, desktops, laptops, printers, network routers, firewalls, surveillance systems and various computer accessories with ample stock and competitive pricing.',
+                stat_years: 'Years Experience',
+                stat_clients: 'Satisfied Clients',
+                stat_products: 'Product Types',
+                stat_support: 'Tech Support',
+                services_title: 'Our Services',
+                services_subtitle: 'One-stop IT services covering all your business needs',
+                svc1_title: 'Computer Equipment',
+                svc1_desc: 'Desktops, laptops, servers, workstations from all major brands with genuine warranty.',
+                svc2_title: 'Network Engineering',
+                svc2_desc: 'Enterprise routers, switches, firewalls, Wi-Fi coverage solutions and cabling projects.',
+                svc3_title: 'Network Security',
+                svc3_desc: 'Firewall configuration, VPN setup, intrusion detection, data encryption and security audits.',
+                svc4_title: 'Cloud Services',
+                svc4_desc: 'Cloud server rental, data backup, enterprise email and cloud collaboration platforms.',
+                svc5_title: 'Surveillance Systems',
+                svc5_desc: 'HD CCTV, IP cameras, remote monitoring and video storage solutions.',
+                svc6_title: 'IT Maintenance',
+                svc6_desc: 'Regular maintenance, emergency repairs, system upgrades and technical consulting.',
+                products_title: 'Featured Products',
+                products_subtitle: 'Selected quality computer equipment and accessories to meet your needs',
+                product_names: ['Business Desktop', 'High-Performance Laptop', 'Enterprise Server', '24-Port Gigabit Switch',
+                    'Enterprise Firewall', 'Wireless AP', 'HD CCTV Camera', 'UPS Power Supply', 'SSD Solid State Drive',
+                    'Professional GPU', 'Mechanical Keyboard', 'Network Cables'
+                ],
+                product_prices: ['HK$4,980+', 'HK$6,880+', 'HK$12,800+', 'HK$2,380', 'HK$5,600+', 'HK$1,280', 'HK$880',
+                    'HK$1,980', 'HK$480', 'HK$3,200', 'HK$680', 'HK$180/box'
+                ],
+                payment_title: 'Flexible Payment Methods',
+                payment_subtitle: 'Supporting multiple e-payment options for your convenience',
+                contact_title: 'Contact Us',
+                contact_subtitle: 'Feel free to inquire, we are always here to serve you',
+                contact_addr_label: 'Address',
+                contact_tel_label: 'Tel / Sales Hotline',
+                contact_sales: 'Sales',
+                contact_fax_label: 'Fax',
+                contact_web_label: 'Website',
+                contact_email_label: 'Email',
+                footer_established: 'Established in 1998',
+                footer_quick_links: 'Quick Links',
+                footer_payment: 'Payment Methods',
+                footer_cert: 'Certification & Security',
+                ai_welcome: 'Hello! I am the AI Assistant of Great Smart Computer 👋 I can answer questions about products, services, quotations and technical support. How can I help you?',
+                ai_placeholder: 'Type your question...',
+                ai_no_answer: 'Sorry, I cannot answer that question at the moment. Please call (852) 2866 8716 to speak with our customer service team. They will be happy to assist you! 😊',
+                ai_greeting_responses: {
+                    'hello': 'Hello! Welcome to Great Smart Computer System Company! We offer comprehensive IT products and services. How can I assist you today? 😊',
+                    'hi': 'Hi there! Welcome to Great Smart! What can I help you with today? 😊',
+                }
+            },
+            'ja': {
+                sales_hotline: '販売ホットライン',
+                since: '1998年よりサービス提供',
+                trusted: '信頼できるITパートナー',
+                nav_home: 'ホーム',
+                nav_about: '会社概要',
+                nav_services: 'サービス',
+                nav_products: '製品紹介',
+                nav_payment: 'お支払い方法',
+                nav_contact: 'お問い合わせ',
+                hero_badge: '🏆 25年以上のIT専門経験',
+                hero_title1: '包括的な',
+                hero_title2: 'ITソリューション',
+                hero_title3: 'プロフェッショナルなコンピュータ機器サプライヤー',
+                hero_desc: '佳誠電腦系統公司は1998年に設立され、包括的なコンピュータ機器、ネットワーク工事、システム統合及びITサポートサービスを提供しています。信頼できるワンストップITパートナーです。',
+                hero_btn1: '📞 お問い合わせ',
+                hero_btn2: '🖥️ 製品を見る',
+                hero_btn3: '🔧 サービス',
+                about_title: '佳誠電腦について',
+                about_subtitle: '25年以上の専門ITサービス経験、信頼できるテクノロジーパートナー',
+                about_text1: '佳誠電腦系統公司（Great Smart Computer System Company）は1998年に設立され、香港九龍湾に拠点を置き、中小企業や個人のお客様に高品質なコンピュータ機器、ネットワークインフラ、包括的なITソリューションを提供しています。',
+                about_text2: 'サーバー、デスクトップ、ノートパソコン、プリンター、ネットワークルーター、ファイアウォール、監視システムなど、多数の国際ブランドを取り扱っており、在庫も豊富で価格もリーズナブルです。',
+                stat_years: '年の経験',
+                stat_clients: '満足した顧客',
+                stat_products: '製品種類',
+                stat_support: 'テクニカルサポート',
+                services_title: 'サービス内容',
+                services_subtitle: 'ワンストップITサービス、ビジネスニーズに包括的に対応',
+                svc1_title: 'コンピュータ機器供給',
+                svc1_desc: 'デスクトップ、ノートパソコン、サーバー、ワークステーション、各種ブランド正規品。',
+                svc2_title: 'ネットワーク工事',
+                svc2_desc: 'エンタープライズルーター、スイッチ、ファイアウォール、Wi-Fiカバレッジ及び配線工事。',
+                svc3_title: 'ネットワークセキュリティ',
+                svc3_desc: 'ファイアウォール設定、VPN構築、侵入検知、データ暗号化及びセキュリティ監査。',
+                svc4_title: 'クラウドサービス',
+                svc4_desc: 'クラウドサーバーレンタル、データバックアップ、企業メール及びクラウドコラボレーション。',
+                svc5_title: '監視システム',
+                svc5_desc: '高画質CCTV、IPカメラ、リモート監視及び録画保存ソリューション。',
+                svc6_title: 'ITメンテナンス',
+                svc6_desc: '定期メンテナンス、緊急修理、システムアップグレード及び技術コンサルティング。',
+                products_title: '人気製品紹介',
+                products_subtitle: '選りすぐりの高品質なコンピュータ機器とアクセサリー',
+                product_names: ['ビジネスデスクトップ', '高性能ノートPC', 'エンタープライズサーバー', '24ポートギガビットスイッチ', '企業向けファイアウォール',
+                    '無線APアクセスポイント', '高画質CCTVカメラ', 'UPS無停電電源', 'SSDソリッドステートドライブ', 'プロフェッショナルGPU',
+                    'メカニカルキーボード', 'ネットワークケーブル'
+                ],
+                product_prices: ['HK$4,980〜', 'HK$6,880〜', 'HK$12,800〜', 'HK$2,380', 'HK$5,600〜', 'HK$1,280', 'HK$880',
+                    'HK$1,980', 'HK$480', 'HK$3,200', 'HK$680', 'HK$180/箱'
+                ],
+                payment_title: '柔軟なお支払い方法',
+                payment_subtitle: '様々な電子決済に対応、便利でスピーディー',
+                contact_title: 'お問い合わせ',
+                contact_subtitle: 'お気軽にお問い合わせください',
+                contact_addr_label: '会社住所',
+                contact_tel_label: '電話 / 販売ホットライン',
+                contact_sales: '販売',
+                contact_fax_label: 'ファックス',
+                contact_web_label: 'ウェブサイト',
+                contact_email_label: 'メール',
+                footer_established: '1998年設立',
+                footer_quick_links: 'クイックリンク',
+                footer_payment: 'お支払い方法',
+                footer_cert: '認証とセキュリティ',
+                ai_welcome: 'こんにちは！佳誠電腦のAIアシスタントです👋 製品、サービス、見積もり、技術サポートについてお答えします。どのようなご用件でしょうか？',
+                ai_placeholder: '質問を入力してください...',
+                ai_no_answer: '申し訳ございません。その質問には現在お答えできません。(852) 2866 8716 までお電話いただければ、カスタマーサービスチームが喜んでサポートいたします！😊',
+                ai_greeting_responses: {
+                    'こんにちは': 'こんにちは！佳誠電腦系統公司へようこそ！IT製品やサービスについてお気軽にお問い合わせください。😊',
+                }
+            }
+        };
+
+        let currentLang = 'zh-HK';
+
+        function switchLang(lang) {
+            currentLang = lang;
+            // Update buttons
+            document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active-lang'));
+            const btnMap = { 'zh-HK': 'btn-zhHK', 'zh-CN': 'btn-zhCN', 'en': 'btn-en', 'ja': 'btn-ja' };
+            document.getElementById(btnMap[lang]).classList.add('active-lang');
+            // Update all data-lang-key elements
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            // Update placeholder
+            const aiInput = document.getElementById('aiInput');
+            if (translations[lang] && translations[lang]['ai_placeholder']) {
+                aiInput.setAttribute('placeholder', translations[lang]['ai_placeholder']);
+            }
+            // Update AI welcome message if it's still the default
+            const aiMessages = document.getElementById('aiMessages');
+            const firstMsg = aiMessages.querySelector('.ai-msg.bot');
+            if (firstMsg && firstMsg.getAttribute('data-lang-key') === 'ai_welcome') {
+                firstMsg.textContent = translations[lang]['ai_welcome'] || translations['zh-HK']['ai_welcome'];
+            }
+            // Re-render products
+            renderProducts();
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            // Save preference
+            localStorage.setItem('greatsmart_lang', lang);
+        }
+
+        function getT(key) {
+            return (translations[currentLang] && translations[currentLang][key]) || (translations['zh-HK'][key]) || key;
+        }
+
+        // ==================== PRODUCTS RENDERING ====================
+        const productImages = [
+            'https://images.unsplash.com/photo-1593640407721-8866e2824360?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=400&h=250&fit=crop',
+            'https://images.unsplash.com/photo-1627850606158-c9dd1b5a68cc?w=400&h=250&fit=crop',
+        ];
+        const fallbackImages = [
+            'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?w=400',
+            'https://images.pexels.com/photos/18105/pexels-photo.jpg?w=400',
+            'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?w=400',
+            'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?w=400',
+            'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?w=400',
+            'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?w=400',
+            'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?w=400',
+            'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?w=400',
+            'https://images.pexels.com/photos/1266982/pexels-photo-1266982.jpeg?w=400',
+            'https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?w=400',
+            'https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?w=400',
+            'https://images.pexels.com/photos/163140/technology-computer-motherboard-chips-163140.jpeg?w=400',
+        ];
+
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const names = getT('product_names');
+            const prices = getT('product_prices');
+            const nameArr = Array.isArray(names) ? names : (translations['zh-HK'].product_names);
+            const priceArr = Array.isArray(prices) ? prices : (translations['zh-HK'].product_prices);
+            grid.innerHTML = '';
+            nameArr.forEach((name, i) => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.style.animationDelay = (i * 0.06) + 's';
+                const imgSrc = productImages[i] || fallbackImages[i] || productImages[0];
+                const fallbackSrc = fallbackImages[i] || fallbackImages[0];
+                card.innerHTML = `
+                    <img src="${imgSrc}" alt="${name}" loading="lazy"
+                         onerror="this.onerror=null;this.src='${fallbackSrc}';">
+                    <div class="product-info">
+                        <h4>${name}</h4>
+                        <p class="price">${priceArr[i] || '查詢'}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        renderProducts();
+
+        // ==================== HERO PARTICLES ====================
+        function createParticles() {
+            const container = document.getElementById('heroParticles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'hero-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 5) + 's';
+                particle.style.width = (2 + Math.random() * 5) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // ==================== MOBILE MENU ====================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            mobileMenuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // ==================== HEADER SCROLL EFFECT ====================
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ==================== AI AGENT ====================
+        const aiTrigger = document.getElementById('aiAgentTrigger');
+        const aiPanel = document.getElementById('aiAgentPanel');
+        const aiClose = document.getElementById('aiAgentClose');
+        const aiMessages = document.getElementById('aiMessages');
+        const aiInput = document.getElementById('aiInput');
+        const aiSendBtn = document.getElementById('aiSendBtn');
+
+        aiTrigger.addEventListener('click', () => {
+            aiPanel.classList.toggle('open');
+            if (aiPanel.classList.contains('open')) {
+                aiInput.focus();
+            }
+        });
+        aiClose.addEventListener('click', () => {
+            aiPanel.classList.remove('open');
+        });
+
+        function addAiMessage(text, type) {
+            const msg = document.createElement('div');
+            msg.className = 'ai-msg ' + type;
+            msg.textContent = text;
+            aiMessages.appendChild(msg);
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+        }
+
+        function getAiResponse(userInput) {
+            const input = userInput.toLowerCase().trim();
+            const t = translations[currentLang] || translations['zh-HK'];
+            // Check greeting responses
+            if (t.ai_greeting_responses && t.ai_greeting_responses[input]) {
+                return t.ai_greeting_responses[input];
+            }
+            // Keyword-based responses
+            const keywords = {
+                'zh-HK': {
+                    '產品': '我們提供各種電腦設備，包括桌面電腦、筆記本、伺服器、打印機、網絡設備等。歡迎瀏覽我們的產品展示區或致電 (852) 8100 2638 查詢！',
+                    '價格': '產品價格因型號和配置而異。建議您致電銷售熱線 (852) 8100 2638 或發送電郵至 info@greatsmart.com.hk 獲取最新報價。',
+                    '地址': '我們的辦公室位於九龍灣宏開道15號九龍灣工業中心4樓431室。歡迎蒞臨參觀！',
+                    '聯絡': '您可以致電 (852) 2866 8716、WhatsApp/WeChat (852) 9290 7998 或發送電郵至 info@greatsmart.com.hk 與我們聯絡。',
+                    '伺服器': '我們提供各品牌企業級伺服器，包括Dell、HP、Lenovo等，價格由HK$12,800起。歡迎查詢配置及報價！',
+                    '網絡': '我們提供全面的網絡工程服務，包括路由器、交換機、防火牆配置及Wi-Fi覆蓋方案。請致電查詢！',
+                    '監控': '我們提供高清CCTV監控系統，包括IP攝像頭、NVR錄影機及遠程監控方案。價格由HK$880起。',
+                },
+                'zh-CN': {
+                    '产品': '我们提供各种电脑设备，包括桌面电脑、笔记本、服务器、打印机、网络设备等。欢迎浏览我们的产品展示区或致电 (852) 8100 2638 查询！',
+                    '价格': '产品价格因型号和配置而异。建议您致电销售热线 (852) 8100 2638 或发送电邮至 info@greatsmart.com.hk 获取最新报价。',
+                    '地址': '我们的办公室位于九龙湾宏开道15号九龙湾工业中心4楼431室。欢迎莅临参观！',
+                    '联络': '您可以致电 (852) 2866 8716、WhatsApp/WeChat (852) 9290 7998 或发送电邮至 info@greatsmart.com.hk 与我们联络。',
+                    '服务器': '我们提供各品牌企业级服务器，包括Dell、HP、Lenovo等，价格由HK$12,800起。欢迎查询配置及报价！',
+                    '网络': '我们提供全面的网络工程服务，包括路由器、交换机、防火墙配置及Wi-Fi覆盖方案。请致电查询！',
+                    '监控': '我们提供高清CCTV监控系统，包括IP摄像头、NVR录影机及远程监控方案。价格由HK$880起。',
+                },
+                'en': {
+                    'product': 'We offer various computer equipment including desktops, laptops, servers, printers, and network devices. Browse our products section or call (852) 8100 2638 for inquiries!',
+                    'price': 'Prices vary by model and configuration. Please call our sales hotline (852) 8100 2638 or email info@greatsmart.com.hk for the latest quotations.',
+                    'address': 'Our office is located at Room 431, 4/F, Kowloon Bay Industrial Centre, 15 Wang Hoi Road, Kowloon Bay, Kowloon. You are welcome to visit!',
+                    'contact': 'You can reach us at (852) 2866 8716, WhatsApp/WeChat (852) 9290 7998, or email info@greatsmart.com.hk.',
+                    'server': 'We offer enterprise servers from various brands including Dell, HP, Lenovo, starting from HK$12,800. Contact us for configurations and quotes!',
+                    'network': 'We provide comprehensive network engineering services including routers, switches, firewall configuration, and Wi-Fi coverage solutions. Call us for details!',
+                    'surveillance': 'We offer HD CCTV surveillance systems including IP cameras, NVR recorders, and remote monitoring solutions. Prices start from HK$880.',
+                },
+                'ja': {
+                    '製品': 'デスクトップ、ノートパソコン、サーバー、プリンター、ネットワーク機器など、さまざまなコンピュータ機器を提供しています。製品セクションをご覧いただくか、(852) 8100 2638 までお問い合わせください！',
+                    '価格': '価格はモデルと構成によって異なります。販売ホットライン (852) 8100 2638 または info@greatsmart.com.hk までお問い合わせください。',
+                    '住所': 'オフィスは九龍湾宏開道15號九龍湾工業中心4階431室にあります。お気軽にお越しください！',
+                    '連絡': '(852) 2866 8716、WhatsApp/WeChat (852) 9290 7998、または info@greatsmart.com.hk までご連絡ください。',
+                    'サーバー': 'Dell、HP、Lenovoなど各ブランドのエンタープライズサーバーをHK$12,800〜で提供しています。構成と見積もりについてはお問い合わせください！',
+                    'ネットワーク': 'ルーター、スイッチ、ファイアウォール設定、Wi-Fiカバレッジソリューションなど、包括的なネットワーク工事サービスを提供しています。詳細はお電話ください！',
+                    '監視': 'IPカメラ、NVRレコーダー、リモート監視ソリューションを含む高画質CCTV監視システムをHK$880〜で提供しています。',
+                }
+            };
+            const langKeywords = keywords[currentLang] || keywords['zh-HK'];
+            for (const [kw, response] of Object.entries(langKeywords)) {
+                if (input.includes(kw.toLowerCase())) {
+                    return response;
+                }
+            }
+            // Check for common greetings across all languages
+            if (input === '你好' || input === 'hello' || input === 'hi' || input === 'こんにちは') {
+                return t.ai_greeting_responses?.[input] || t.ai_welcome;
+            }
+            return t.ai_no_answer || translations['zh-HK'].ai_no_answer;
+        }
+
+        function sendAiMessage() {
+            const text = aiInput.value.trim();
+            if (!text) return;
+            addAiMessage(text, 'user');
+            aiInput.value = '';
+            // Simulate typing delay
+            setTimeout(() => {
+                const response = getAiResponse(text);
+                addAiMessage(response, 'bot');
+            }, 600 + Math.random() * 800);
+        }
+
+        aiSendBtn.addEventListener('click', sendAiMessage);
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendAiMessage();
+        });
+
+        // ==================== CURRENT YEAR ====================
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // ==================== LOAD SAVED LANGUAGE ====================
+        const savedLang = localStorage.getItem('greatsmart_lang');
+        if (savedLang && translations[savedLang]) {
+            switchLang(savedLang);
+        }
+
+        // ==================== INTERSECTION OBSERVER FOR ANIMATIONS ====================
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.animate-fadeInUp, .animate-fadeInScale, .animate-slideInLeft, .animate-slideInRight, .animate-flipIn')
+            .forEach(el => {
+                el.style.animationPlayState = 'paused';
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        // Trigger animations immediately for visible elements
+        setTimeout(() => {
+            document.querySelectorAll('.animate-fadeInUp, .animate-fadeInScale, .animate-slideInLeft, .animate-slideInRight, .animate-flipIn')
+                .forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.style.animationPlayState = 'running';
+                        el.style.opacity = '1';
+                    }
+                });
+        }, 300);
+
+        // ==================== SMOOTH SCROLL FOR NAV ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        console.log('✅ 佳誠電腦系統公司 Great Smart Computer System Company');
+        console.log('🌐 Website: https://www.greatsmart.com.hk');
+        console.log('🔒 SSL Enabled | HTTP→HTTPS Auto Redirect | AI Agent Active');
+        console.log('📍 九龍灣宏開道15號九龍灣工業中心4樓431室');
+    </script>
+</body>
+</html>
